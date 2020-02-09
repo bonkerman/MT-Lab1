@@ -10,6 +10,7 @@ $(document).ready(function () {
         video.play();
     });
     $("#pause").click(function () {
+        video.pause();
     });
     $("#stop").click(function () {
     });
