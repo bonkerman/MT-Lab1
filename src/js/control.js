@@ -6,11 +6,14 @@ $(document).ready(function () {
     // video.play();
     console.log("ready!");
     $("#play").click(function () {
-        console.log("Pushed play");
-        video.play();
-    });
-    $("#pause").click(function () {
-        video.pause();
+        if($(this).text()=="Play"){
+           video.play();
+           $(this).text("Pause")
+        } else {
+            video.pause();
+            $(this).text("Play")
+        }
+        
     });
     $("#stop").click(function () {
         video.reset();
