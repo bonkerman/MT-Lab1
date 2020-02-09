@@ -22,6 +22,7 @@ $(document).ready(function () {
         video.currentTime(video.currentTime() - 5);
     });
     $("#load").click(function () {
+        video.src($("#src").val());
     });
 });
 
