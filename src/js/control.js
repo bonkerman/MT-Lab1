@@ -19,6 +19,7 @@ $(document).ready(function () {
         video.currentTime(video.currentTime() + 5);
     });
     $("#bck5").click(function () {
+        video.currentTime(video.currentTime() - 5);
     });
     $("#load").click(function () {
     });
