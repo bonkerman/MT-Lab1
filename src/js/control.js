@@ -13,6 +13,7 @@ $(document).ready(function () {
         video.pause();
     });
     $("#stop").click(function () {
+        video.reset();
     });
     $("#fwd5").click(function () {
     });
