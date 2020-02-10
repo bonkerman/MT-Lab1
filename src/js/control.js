@@ -27,23 +27,5 @@ $(document).ready(function () {
     $("#load").click(function () {
         video.src($("#src").val());
     });
-    var Button = videojs.getComponent('Button');
-
-    var PrevButton = videojs.extend(Button, {
-        //constructor: function(player, options) {
-        constructor: function () {
-            Button.apply(this, arguments);
-            //this.addClass('vjs-chapters-button');
-            this.addClass('icon-angle-left');
-            this.controlText("Previous");
-        },
-        handleClick: bck
-    });
-    videojs.registerComponent('PrevButton', PrevButton);
-    video.getChild('controlBar').addChild('PrevButton', {}, 0);
- });
-
- var bck = function () {
-    video.currentTime(video.currentTime() - 5);
-};
+});
 
