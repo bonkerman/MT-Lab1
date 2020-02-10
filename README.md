@@ -1,4 +1,7 @@
 # MT-Lab1
+
+Veikia su Chrome, Opera, Firefox naršyklėmis
+
 Multimedijos sistemos. Laboratorinis darbas Nr.1 ir Nr.2
 
 Šio laboratorinio darbo tikslas - susipažinti su GitHub aplinka ir sukurti interneto naršyklėje veikiantį tiesioginių vaizdo transliacijų grotuvą, suderinamą su HTML5 ir HLS technologija.
