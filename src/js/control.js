@@ -41,9 +41,6 @@ $(document).ready(function () {
         sources.sort(() => Math.random() - 0.5);
         constructList(sources);
     });
-    $(':button[value="Value X"]').click(function(){
-        $(this).parent().remove();
-    });
 });
 
 var playVideo = function () {
@@ -66,6 +63,17 @@ var constructList = function(array){
     $("#playlist").empty();
     array.forEach(element => {
         $("#playlist").append("<div><i>"+element+"  </i><button>X</button></div>");
+    });
+    $('button:contains(X)').click(function(){
+        $(this).parent().css("background-color", "yellow");
+        var text = $(this).parent().children().first().text();
+        array = array.filter(function(value, index, arr){
+
+            return value == text;
+        
+        });
+        $(this).parent().remove();
+        sources = array;
     });
 }
 
