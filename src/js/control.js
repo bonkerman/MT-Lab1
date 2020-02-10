@@ -37,43 +37,51 @@ $(document).ready(function () {
         sources.push($("#src").val());
         constructList(sources);
     });
-    $("#shuffle").click(function(){
-        sources.sort(() => Math.random() - 0.5);
-        constructList(sources);
+    $("#shuffle").click(function () {
+        if (sources.length > 1) {
+            sources.sort(() => Math.random() - 0.5);
+            constructList(sources);
+        }
+        i = 0;
     });
 });
 
 var playVideo = function () {
     console.log(sources.length);
-    if (sources.length > i+1 ) {
-        console.log("enbdawe");
-        var player = video;
-        player.pause();
-        i = i+1;
-        console.log(sources[i]);
-        player.src(sources[i]);
-        player.load();
-        player.play();
+    if (sources.length > i + 1) {
+        i = i + 1;
+        setSourceAndPlay(sources[i]);
     } else {
-        player.reset();
+        this.reset();
     }
 };
 
-var constructList = function(array){
+var constructList = function (array) {
     $("#playlist").empty();
     array.forEach(element => {
-        $("#playlist").append("<div><i>"+element+"  </i><button>X</button></div>");
+        $("#playlist").append("<div><i class=\"element\">" + element + "  </i><button>X</button></div>");
     });
-    $('button:contains(X)').click(function(){
-        $(this).parent().css("background-color", "yellow");
+    $('button:contains(X)').click(function () {
         var text = $(this).parent().children().first().text();
-        array = array.filter(function(value, index, arr){
+        array = array.filter(function (value, index, arr) {
 
             return value == text;
-        
+
         });
         $(this).parent().remove();
         sources = array;
     });
-}
+    $(".element").click(function () {
+        setSourceAndPlay($(this).text());
+    });
+};
+
+var setSourceAndPlay = function (source) {
+    video.pause();
+    video.reset();
+    console.log(source);
+    video.src(source);
+    video.load();
+    video.play();
+};
 

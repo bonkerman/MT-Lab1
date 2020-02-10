@@ -1,3 +1,7 @@
 .playlist{
 	display: inline-block;
 }
+
+.element:hover{
+	background-color: aqua;
+}
